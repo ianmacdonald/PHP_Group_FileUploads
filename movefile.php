@@ -36,8 +36,8 @@ function buildFilelist() {
     
 function moveFile() {
     //variables for both selected dir and target dir
-    $selectedDir = ;
-    $targetDir = ;
+    $selectedFile = $_REQUEST['fileToMove'];
+    $targetDir = $_REQUEST['target_directory'];
 
     //Create a directory list of each file in directory
 }
