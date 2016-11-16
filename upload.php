@@ -52,25 +52,22 @@ This function displays the file upload form
 -->
 
 <?php
-    function upload_form ($path,$msg="") { 
+    function upload_form ($path, $msg="") { 
 
-
-        <form enctype='multipart/form-data'  
-               action="<?php echo htmlspecialchars($_SERVER["REQUEST_URI"]); ?>" method='POST'> 
+        <form enctype='multipart/form-data' action="<?php echo htmlspecialchars($_SERVER["REQUEST_URI"]); ?>" method='POST'> 
 
             <fieldset> 
-                <legend>Upload File</legend> 
-                  <span class="label">File to upload (max 1 MB):</span> 
-                  <input type="hidden" name="MAX_FILE_SIZE" value="1000000"> 
-                  <input name='fileToUpload' type='file'/><br><br> 
-                  <span class="label">Upload directory:</span> 
-                    <select name='upload_directory'> 
-                        <?php echo build_directory_select_box($path, 'upload_directory'); ?> 
-                   </select><br><br> 
-              <input type='submit' name='upload_form_submit' value='Upload File'/> 
+            <legend>Upload File</legend> 
+            <span class="label">File to upload (max 1 MB):</span> 
+                <input type="hidden" name="MAX_FILE_SIZE" value="1000000"> 
+                <input name='fileToUpload' type='file'/><br><br> 
+            <span class="label">Upload directory:</span> 
+                <select name='upload_directory'> 
+                <?php echo build_directory_select_box($path, 'upload_directory'); ?> 
+                </select><br><br> 
+            <input type='submit' name='upload_form_submit' value='Upload File'/> 
             <p class="msg"><?php echo $msg ?></p> <!-- display status or error msg --> 
           </fieldset> 
-        </form> 
-    <?php 
-    } //end upload_file 
+        </form>  
+    }} //end upload_file 
 ?>
